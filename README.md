@@ -33,7 +33,6 @@ output.txt
 ```
 This is my string
 and my second string
-not this one
 but this string
 or this
 ````
