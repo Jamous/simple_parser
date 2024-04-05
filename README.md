@@ -6,7 +6,9 @@ Simple text parser written in go. Accepts an input file, a list of strings to ma
 Usage
 -----
 -m string File to match values from. (default "match.txt")
+
 -o string File to save results to. (default "output.txt")
+
 -p string File to parse from. (default "input.txt")
 
 
