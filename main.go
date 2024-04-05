@@ -1,17 +1,17 @@
 package main
 
 import (
-	"fmt"
-	"log"
-	"io/ioutil"
 	"bufio"
+	"flag"
+	"fmt"
+	"io/ioutil"
+	"log"
 	"os"
 	"strings"
-	"flag"
 )
 
 //Evil global variabels
-var parseFile, matchFile, outFile  string
+var parseFile, matchFile, outFile string
 
 func main() {
 	//Parse user input
@@ -35,14 +35,14 @@ func main() {
 
 func parseInput() {
 	//Parese inputs
-	pfPtr := flag.String("p","input.txt", "File to parse from.")
-	mfPtr := flag.String("m","match.txt", "File to match values from.")
-	ofPtr := flag.String("o","output.txt", "File to save results to.")
+	pfPtr := flag.String("p", "input.txt", "File to parse from.")
+	mfPtr := flag.String("m", "match.txt", "File to match values from.")
+	ofPtr := flag.String("o", "output.txt", "File to save results to.")
 	flag.Parse()
 
 	parseFile = *pfPtr
 	matchFile = *mfPtr
-	outFile = *ofPtr 
+	outFile = *ofPtr
 }
 
 func importFile() string {
@@ -52,9 +52,9 @@ func importFile() string {
 		log.Fatal("failed to open parseFile")
 	}
 
-	//Convert iFile to string 
+	//Convert iFile to string
 	parseString := string(iFile)
-	
+
 	return parseString
 }
 
@@ -66,7 +66,7 @@ func importMatch() []string {
 	if err != nil {
 		log.Fatal("failed to open matchFile")
 	}
-	
+
 	//Create buffio scanner and split lines
 	scanner := bufio.NewScanner(mFile)
 	scanner.Split(bufio.ScanLines)
